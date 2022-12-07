@@ -8,63 +8,36 @@ public class Main {
         String path = "F:\\Game\\";
         StringBuilder log = new StringBuilder();
 
-        File dirSrc = new File(path + "src");
-        if (dirSrc.mkdir()) {
-            log.append("Каталог ").append(dirSrc).append(" создан\n");
-        }
-        else {
-            log.append("Каталог ").append(dirSrc).append(" НЕ создан\n");
-        }
+        String [][] dirList = {{"src", "res", "savegames", "temp"},
+                               {"main", "test"},
+                               {"drawables", "vectors", "icons"}};
 
-        File dirRes = new File(path + "res");
-        if (dirRes.mkdir()) {
-            log.append("Каталог ").append(dirRes).append(" создан\n");
-        }
-        else {
-            log.append("Каталог ").append(dirRes).append(" не создан\n");
+        for (String dir1: dirList [0]) {
+            File dir = new File(path + dir1);
+            if (dir.mkdir()) {
+                log.append("Каталог ").append(dir).append(" создан\n");
+            } else {
+                log.append("Каталог ").append(dir).append(" НЕ создан\n");
+            }
         }
 
-        File dirSavegames = new File(path + "savegames");
-        if (dirSavegames.mkdir())
-            log.append("Каталог ").append(dirSavegames).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirSavegames).append(" НЕ создан\n");
+        for (String dir2: dirList [1]) {
+            File dir = new File(path + dirList[0][0] + "\\" + dir2);
+            if (dir.mkdir()) {
+                log.append("Каталог ").append(dir).append(" создан\n");
+            } else {
+                log.append("Каталог ").append(dir).append(" НЕ создан\n");
+            }
+        }
 
-        File dirTemp = new File(path + "temp");
-        if (dirTemp.mkdir())
-            log.append("Каталог ").append(dirTemp).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirTemp).append(" НЕ создан\n");
-
-        File dirMain = new File(path + "src\\main");
-        if (dirMain.mkdir())
-            log.append("Каталог ").append(dirMain).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirMain).append(" НЕ создан\n");
-
-        File dirTest = new File(path + "src\\test");
-        if (dirTest.mkdir())
-            log.append("Каталог ").append(dirTest).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirTest).append(" НЕ создан\n");
-
-        File dirDrawables = new File(path + "res\\drawables");
-        if (dirDrawables.mkdir())
-            log.append("Каталог ").append(dirDrawables).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirDrawables).append(" НЕ создан\n");
-
-        File dirVectors = new File(path + "res\\vectors");
-        if (dirVectors.mkdir())
-            log.append("Каталог ").append(dirVectors).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirVectors).append(" НЕ создан\n");
-
-        File dirIcons = new File(path + "res\\icons");
-        if (dirIcons.mkdir())
-            log.append("Каталог ").append(dirIcons).append(" создан\n");
-        else
-            log.append("Каталог ").append(dirIcons).append(" НЕ создан\n");
+        for (String dir3: dirList [2]) {
+            File dir = new File(path + dirList[0][1] + "\\" + dir3);
+            if (dir.mkdir()) {
+                log.append("Каталог ").append(dir).append(" создан\n");
+            } else {
+                log.append("Каталог ").append(dir).append(" НЕ создан\n");
+            }
+        }
 
         File mainJava = new File(path + "src\\main","Main.java");
         try {
